@@ -10,7 +10,14 @@ export default function InputSection({onAddTask}) {
             onAddTask(inputValue)
             setInputValue('')
         }
-    } 
+    }
+    
+    const editInput = (event) => {
+        const newValue = event.target.value
+        if (newValue.length < 47) {
+            setInputValue(newValue)
+        }
+    }
 
     return (
         <section className="inputSection">
@@ -21,7 +28,7 @@ export default function InputSection({onAddTask}) {
                 id="task" 
                 placeholder='Write here your todo...'
                 value={inputValue}
-                onChange={e => setInputValue(e.target.value)}
+                onChange={e => editInput(e)}
             />
 
             <Button className="button" onClick={handleClick}>
