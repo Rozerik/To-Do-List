@@ -1,0 +1,203 @@
+* {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #99c4d8;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.mainContainer {
+  margin: 100px auto;
+  width: 500px;
+  height: auto;
+  padding-bottom: 20px;
+  background-color: #eeeeee;
+  border-radius: 20px;
+  box-shadow: 10px 12px 6px rgb(111, 114, 134);
+  transition: height 0.05s ease-in-out;
+  overflow: visible;
+}
+
+.mainContainer h1 {
+  color: #0e0e0e;
+  font-size: 40px;
+}
+
+.inputSection {
+  margin-top: 40px;
+  padding: 0px 25px 0px 25px;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
+header img {
+  width: 50px;
+  height: 50px;
+  margin-left: 20px;
+}
+
+input {
+  border-radius: 10px;
+  font-size: 20px;
+  border-color:#99c4d8;
+  width: 350px;
+  height: 40px;
+  padding-left: 5px;
+  transition: 0.05s;
+}
+
+input:hover {
+  border-color: #0e0e0e;
+  box-shadow: 2px 2px 2px #bdbdbd;
+}
+
+button {
+  width: 75px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #99c4d8;
+  border-style: none;
+  transition: 0.05s;
+  font-size: 20px;
+}
+
+button:hover {
+  border-style: outset;
+  border-color: #0e0e0e;
+  box-shadow: 2px 2px 2px #bdbdbd;
+  transition: 0.01s;
+}
+
+button:active {
+  background-color: rgb(21, 119, 21);
+}
+
+button img {
+  width: 20px;
+  height: 20px;
+}
+
+.task-item {
+  position: relative;
+  padding: 7px;
+  width: 450px;
+  height: 50px;
+  list-style-type: none;
+  border: #99c4d8 solid;
+  margin: 10px auto;
+  font-size: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  word-break: break-all;
+  transition: 0.9s;
+  background-color: white;
+  border-style: inset;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.task-item span.done {
+  text-decoration: line-through;
+  color: gray;
+}
+
+/* li:hover > span {
+  display: none;
+} */
+
+li:hover .taskButton {
+  display: flex;
+  opacity: 1; /* Показываем с плавностью */
+  visibility: visible;
+}
+
+.buttonReady {
+  width: 200px;
+  background-color: rgb(42, 185, 42);
+}
+
+.buttonDelete {
+  background-color: rgb(226, 44, 44);
+  width: 200px;
+}
+
+.taskButton {
+  display: flex;
+  position: absolute;
+  right: 10px; /* отступ от правого края */
+  top: 50%;
+  transform: translateY(-50%); /* точное вертикальное центрирование */
+  gap: 50px;
+  opacity: 0; /* Скрыто */
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.overline {
+  text-decoration: overline;
+}
+
+footer {
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer > button {
+  height: 50px;
+  width: 200px;
+  background-color: #99c4d8;
+  color: white;
+}
+
+.noTaskSection {
+  height: auto;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.task-item.removed {
+  animation: fadeOut 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    max-height: 100px;
+  }
+  to {
+    opacity: 0;
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+  }
+}
