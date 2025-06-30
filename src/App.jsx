@@ -1,6 +1,6 @@
 import Header from './Components/Header'
 import InputSection from './Components/InputSection'
-import './App.css'
+import './styles.css'
 import TaskSection from './Components/TaskSection'
 import {useTasks} from './Hooks/useTasks'
 import FooterSection from './Components/FooterSection'
